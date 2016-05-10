@@ -1,0 +1,32 @@
+<body>
+  <div class="container">
+
+    <header>
+      <div class="jumbotron">
+        <h1>Halo 5 Arena Analytics</h1>
+        <p>Better your game through data.</p>
+        <form class="gamertag">
+          <div class="form-group input-group">
+            <input type="text" class="form-control" name="player" placeholder="Enter your gamertag" />
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="submit">Go!</button>
+            </span>
+          </div>
+        </form>
+      </div>
+    </header>
+
+    <section>
+      <div class="row">
+        <div class="col-md-4 matches">
+          {{> matchList}}
+        </div>
+
+        <div class="col-md-8">
+          {{> carnageReport}}
+        </div>
+      </div>
+    </section>
+
+  </div>
+</body>

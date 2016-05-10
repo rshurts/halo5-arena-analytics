@@ -1,0 +1,11 @@
+// Use "airbnb/base" for a normal ecmascript-based config and "airbnb" in a React project.
+{
+  "plugins": [
+    "meteor"
+  ],
+  "extends": [
+    "airbnb/base",
+    "plugin:meteor/recommended"
+  ]
+}
+

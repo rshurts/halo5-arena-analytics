@@ -1,0 +1,47 @@
+<template name="victimReport">
+{{#if Template.subscriptionsReady}}
+  <h3>Victim Details <small>{{victimDetails.player}}</small></h3>
+  <h4>Your Tools of Destruction</h4>
+  <table class="table table-condensed">
+    <thead>
+      <tr>
+        <th>Weapon</th>
+        <th>Total Kills</th>
+        <th>Headshot Kills</th>
+      </tr>
+    </thead>
+    <tbody>
+    {{#each weaponStats}}
+      <tr>
+      {{> victimWeaponStat}}
+      </tr>
+    {{/each}}
+    </tbody>
+  </table>
+
+  <h4>Overall Victim Performance</h4>
+  <div class="row">
+    <div class="col-md-4">
+      <p>Kills: {{victimDetails.totalKills}}</p>
+    </div>
+    <div class="col-md-4">
+      <p>Assists: {{victimDetails.totalAssists}}</p>
+    </div>
+    <div class="col-md-4">
+      <p>Deaths: {{victimDetails.totalDeaths}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <p>Accuracy: {{accuracy victimDetails.totalShotsLanded victimDetails.totalShotsFired}}%</p>
+      <p>Power Weapon Grabs: {{victimDetails.totalPowerWeaponGrabs}}</p>
+    </div>
+  </div>
+{{/if}}
+</template>
+
+<template name="victimWeaponStat">
+  <td>{{weaponName}}</td>
+  <td>{{weaponKills}}</td>
+  <td>{{weaponHeadshots}}</td>
+</template>

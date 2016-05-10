@@ -1,0 +1,30 @@
+<template name="matchList">
+  <h3>Matches</h3>
+  <ol>
+  {{#each matches}}
+    <div class="match">
+      {{#with maps}}
+        {{> map}}
+      {{/with}}
+      {{#with gameBaseVariants}}
+        {{> gameBaseVariant}}
+      {{/with}}
+    <!-- {{> match}} -->
+    </div>
+    {{/each}}
+  </ol>
+</template>
+
+<template name="match">
+  <p>{{matchId}}</p>
+</template>
+
+<template name="map">
+  <li><img src={{imageUrl}} alt={{name}} height="160" width="320"></li>
+  <p>{{name}}</p>
+</template>
+
+<template name="gameBaseVariant">
+  <p>{{name}}</p>
+  <!-- <img src={{iconUrl}} alt={{name}} height="60" width="60"> -->
+</template>
