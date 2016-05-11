@@ -26,7 +26,6 @@ Meteor.methods({
             },
           }
         );
-        console.log(response.content);
 
         const variant = JSON.parse(response.content);
 
