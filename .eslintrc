@@ -6,6 +6,9 @@
   "extends": [
     "airbnb/base",
     "plugin:meteor/recommended"
-  ]
+  ],
+  "rules": {
+    "import/no-unresolved": [2, { "ignore": ["^meteor/"] }]
+  }
 }
 
