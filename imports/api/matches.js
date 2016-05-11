@@ -15,7 +15,7 @@ Meteor.methods({
   'getMatchesForPlayer'(player) {
     check(player, String);
     if (Meteor.isServer && player !== '') {
-      console.log('Getting matches for player', player);
+      console.log('Getting MATCHES for player', player);
       const response = HTTP.get(
         'https://www.haloapi.com/stats/h5/players/' + player + '/matches?',
         {
