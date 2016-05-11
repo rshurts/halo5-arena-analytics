@@ -21,7 +21,7 @@ Template.matchList.helpers({
   matches() {
     const player = Session.get('player');
     if (player) {
-      return Matches.find({ player }, { sort: { date: 1 } });
+      return Matches.find({ player }, { sort: { completionDate: -1, date: -1 } });
     }
     return null;
   },

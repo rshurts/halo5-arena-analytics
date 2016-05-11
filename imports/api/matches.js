@@ -40,6 +40,7 @@ Meteor.methods({
             mapId: matches[i].MapId,
             gameBaseVariantId: matches[i].GameBaseVariantId,
             gameVariantId: matches[i].GameVariant.ResourceId,
+            completionDate: matches[i].MatchCompletedDate.ISO8601Date,
             date: new Date(),
           });
         }
