@@ -6,8 +6,8 @@ import { HTTP } from 'meteor/http';
 export const Matches = new Mongo.Collection('Matches');
 
 if (Meteor.isServer) {
-  Meteor.publish('Matches', function matchesPublication(limit) {
-    return Matches.find({}, { sort: { completionDate: -1, date: -1 }, limit });
+  Meteor.publish('Matches', function matchesPublication() {
+    return Matches.find({}, { sort: { completionDate: -1, date: -1 } });
   });
 }
 

@@ -14,7 +14,7 @@ import '../api/match-events.js';
 import './matchList.html';
 
 Template.matchList.onCreated(function matchListOnCreated() {
-  this.subscribe('Matches', 5);
+  this.subscribe('Matches');
   this.subscribe('Maps');
   this.subscribe('GameBaseVariants');
   this.subscribe('GameVariants');
@@ -26,7 +26,7 @@ Template.matchList.helpers({
     if (player) {
       return Matches.find(
         { player },
-        { sort: { completionDate: -1, date: -1 } }
+        { sort: { completionDate: -1, date: -1 }, limit: 5 }
       );
     }
     return null;
