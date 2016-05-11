@@ -6,8 +6,11 @@
       {{#with maps}}
         {{> map}}
       {{/with}}
-      {{#with gameBaseVariants}}
-        {{> gameBaseVariant}}
+      <!-- {{#with gameBaseVariants}} -->
+        <!-- {{> gameBaseVariant}} -->
+      <!-- {{/with}} -->
+      {{#with gameVariants}}
+        {{> gameVariant}}
       {{/with}}
     <!-- {{> match}} -->
     </div>
@@ -25,6 +28,11 @@
 </template>
 
 <template name="gameBaseVariant">
+  <p>{{name}}</p>
+  <!-- <img src={{iconUrl}} alt={{name}} height="60" width="60"> -->
+</template>
+
+<template name="gameVariant">
   <p>{{name}}</p>
   <!-- <img src={{iconUrl}} alt={{name}} height="60" width="60"> -->
 </template>

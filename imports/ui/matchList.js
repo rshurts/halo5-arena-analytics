@@ -5,7 +5,9 @@ import { Template } from 'meteor/templating';
 import { Matches } from '../api/matches.js';
 import { Maps } from '../api/maps.js';
 import { GameBaseVariants } from '../api/game-base-variants.js';
+import { GameVariants } from '../api/game-variants.js';
 
+import '../api/game-variants.js';
 import '../api/carnage-arena.js';
 import '../api/match-events.js';
 
@@ -15,6 +17,7 @@ Template.matchList.onCreated(function matchListOnCreated() {
   this.subscribe('Matches', 5);
   this.subscribe('Maps');
   this.subscribe('GameBaseVariants');
+  this.subscribe('GameVariants');
 });
 
 Template.matchList.helpers({
@@ -32,6 +35,10 @@ Template.matchList.helpers({
     return GameBaseVariants.findOne({
       gameBaseVariantId: this.gameBaseVariantId,
     });
+  },
+  gameVariants() {
+    Meteor.call('getGameVariants', this.gameVariantId);
+    return GameVariants.findOne({ gameVariantId: this.gameVariantId });
   },
 });
 
