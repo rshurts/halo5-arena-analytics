@@ -18,4 +18,4 @@ A web application for analyising arena performance using the [Halo 5 API](https:
 
 ## Running Locally
 
-To run application locally use `npm run dev` or `meteor run --settings settings.json` and then open a web broswer to (http://localhost:3000).
+To run application locally use `npm run dev` or `meteor run --settings settings.json` and then open a web broswer to [http://localhost:3000].
