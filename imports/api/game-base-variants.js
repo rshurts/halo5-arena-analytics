@@ -26,9 +26,9 @@ Meteor.methods({
       const variants = JSON.parse(response.content);
 
       for (let i = 0; i < variants.length; i++) {
-        if (! GameBaseVariants.find({
-          gameBaseVariantId: variants[i].id
-        }).count()) {
+        if (! GameBaseVariants.find(
+          { gameBaseVariantId: variants[i].id }
+        ).count()) {
           GameBaseVariants.insert({
             name: variants[i].name,
             iconUrl: variants[i].iconUrl,

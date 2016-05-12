@@ -1,4 +1,3 @@
-import { Meteor } from 'meteor/meteor';
 import { Session } from 'meteor/session';
 import { Template } from 'meteor/templating';
 
@@ -38,10 +37,10 @@ Template.carnageReport.helpers({
 });
 
 Template.carnageReport.events({
-  'click .killer'(event) {
+  'click .killer'() {
     Session.set('killer', this.GamerTag);
   },
-  'click .victim'(event) {
+  'click .victim'() {
     Session.set('victim', this.GamerTag);
   },
 });

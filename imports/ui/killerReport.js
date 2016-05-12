@@ -1,4 +1,3 @@
-import { Meteor } from 'meteor/meteor';
 import { Session } from 'meteor/session';
 import { Template } from 'meteor/templating';
 
@@ -43,11 +42,11 @@ Template.killerReport.helpers({
       'victim.Gamertag': Session.get('player'),
     });
 
-    matchEvents.forEach(function (matchEvent) {
+    matchEvents.forEach(matchEvent => {
       const weaponId = matchEvent.killerWeaponStockId;
-      const weaponMetaData = Weapons.findOne({
-        weaponId: weaponId.toString()
-      });
+      const weaponMetaData = Weapons.findOne(
+        { weaponId: weaponId.toString() }
+      );
       if (! _.findWhere(weaponStats, { weaponId })) {
         weaponStats.push({
           weaponId,

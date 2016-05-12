@@ -54,7 +54,7 @@ Template.matchList.helpers({
 });
 
 Template.matchList.events({
-  'click .match'(event) {
+  'click .match'() {
     Session.set('matchId', this.matchId);
     Session.set('killer', null);
     Session.set('victim', null);
