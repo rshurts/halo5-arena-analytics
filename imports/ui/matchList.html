@@ -1,36 +1,38 @@
 <template name="matchList">
-  <div class="row">
-    <div class="col-md-12">
-      <h3>Matches</h3>
-      <table class="table table-condensed table-hover">
-        <thead>
-          <tr>
-            <th>Map</th>
-            <th></th>
-            <th>Game</th>
-            <th></th>
-            <th>Result</th>
-          </tr>
-        </thead>
-      {{#each matches}}
-        <tbody>
-          <tr class="match">
-            {{#with maps}}
-            <td><img src={{imageUrl}} alt={{name}} height="40" width="80"></td>
-            <td>{{name}}</td>
-          {{/with}}
-          {{#with gameVariants}}
-            <td>
-              <img src={{gameVariants.iconUrl}} alt={{gameVariants.name}}
-              height="40" width="40">
-            </td>
-            <td>{{gameVariants.name}}</td>
-          {{/with}}
-            <td>{{results}}</td>
-          </tr>
-        </tbody>
-      {{/each}}
-      </table>
+  <div class={{hidden}}>
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Matches</h3>
+        <table class="table table-condensed table-hover">
+          <thead>
+            <tr>
+              <th>Map</th>
+              <th></th>
+              <th>Game</th>
+              <th></th>
+              <th>Result</th>
+            </tr>
+          </thead>
+        {{#each matches}}
+          <tbody>
+            <tr class="match">
+              {{#with maps}}
+              <td><img src={{imageUrl}} alt={{name}} height="40" width="80"></td>
+              <td>{{name}}</td>
+            {{/with}}
+            {{#with gameVariants}}
+              <td>
+                <img src={{gameVariants.iconUrl}} alt={{gameVariants.name}}
+                height="40" width="40">
+              </td>
+              <td>{{gameVariants.name}}</td>
+            {{/with}}
+              <td>{{results}}</td>
+            </tr>
+          </tbody>
+        {{/each}}
+        </table>
+      </div>
     </div>
   </div>
 </template>

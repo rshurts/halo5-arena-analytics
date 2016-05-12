@@ -20,6 +20,12 @@ Template.matchList.onCreated(function matchListOnCreated() {
 });
 
 Template.matchList.helpers({
+  hidden() {
+    if (Session.get('player')) {
+      return 'visible';
+    }
+    return 'hidden';
+  },
   matches() {
     const player = Session.get('player');
     if (player) {
