@@ -1,83 +1,85 @@
 <template name="carnageReport">
-{{#if Template.subscriptionsReady}}
-  <div class="row">
-    <div class="col-md-12">
-      <h3>Your Performance <small>{{player}}</small></h3>
-      <div class="row">
-        <div class="col-md-3">
-          <p>Kills: {{carnageArena.totalKills}}</p>
+  <div class={{hidden}}>
+  {{#if Template.subscriptionsReady}}
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Your Performance <small>{{player}}</small></h3>
+        <div class="row">
+          <div class="col-md-3">
+            <p>Kills: {{carnageArena.totalKills}}</p>
+          </div>
+          <div class="col-md-3">
+            <p>Assists: {{carnageArena.totalAssists}}</p>
+          </div>
+          <div class="col-md-3">
+            <p>Deaths: {{carnageArena.totalDeaths}}</p>
+          </div>
         </div>
-        <div class="col-md-3">
-          <p>Assists: {{carnageArena.totalAssists}}</p>
-        </div>
-        <div class="col-md-3">
-          <p>Deaths: {{carnageArena.totalDeaths}}</p>
+        <div class="row">
+          <div class="col-md-12">
+            <p>Accuracy: {{accuracy carnageArena.totalShotsLanded carnageArena.totalShotsFired}}%</p>
+            <p>Power Weapon Grabs: {{carnageArena.totalPowerWeaponGrabs}}</p>
+          </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-12">
-          <p>Accuracy: {{accuracy carnageArena.totalShotsLanded carnageArena.totalShotsFired}}%</p>
-          <p>Power Weapon Grabs: {{carnageArena.totalPowerWeaponGrabs}}</p>
-        </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Your Kills</h3>
+        <table class="table table-condensed table-hover">
+          <thead>
+            <tr>
+              <th>Victim</th>
+              <th>Kills</th>
+            </tr>
+          </thead>
+          {{#each carnageArena.killedOpponentDetails}}
+          <tbody>
+            <tr class="victim">
+            {{> report}}
+            </tr>
+          </tbody>
+          {{/each}}
+          <tfoot>
+            <tr class="info">
+              <td>Total Kills</td>
+              <td>{{carnageArena.totalKills}}</td>
+            </tr>
+          </tfoot>
+        </table>
+
+        {{> victimReport}}
+      </div>
+
+      <div class="col-md-6">
+        <h3>Your Deaths</h3>
+        <table class="table table-condensed table-hover">
+          <thead>
+            <tr>
+              <th>Killer</th>
+              <th>Deaths</th>
+            </tr>
+          </thead>
+          {{#each carnageArena.killedByOpponentDetails}}
+          <tbody>
+            <tr class="killer">
+            {{> report}}
+            </tr>
+          </tbody>
+          {{/each}}
+          <tfoot>
+            <tr class="info">
+              <td>Total Deaths</td>
+              <td>{{carnageArena.totalDeaths}}</td>
+            </tr>
+          </tfoot>
+        </table>
+
+        {{> killerReport}}
       </div>
     </div>
+  {{/if}}
   </div>
-  <div class="row">
-    <div class="col-md-6">
-      <h3>Your Kills</h3>
-      <table class="table table-condensed table-hover">
-        <thead>
-          <tr>
-            <th>Victim</th>
-            <th>Kills</th>
-          </tr>
-        </thead>
-        {{#each carnageArena.killedOpponentDetails}}
-        <tbody>
-          <tr class="victim">
-          {{> report}}
-          </tr>
-        </tbody>
-        {{/each}}
-        <tfoot>
-          <tr class="info">
-            <td>Total Kills</td>
-            <td>{{carnageArena.totalKills}}</td>
-          </tr>
-        </tfoot>
-      </table>
-
-      {{> victimReport}}
-    </div>
-
-    <div class="col-md-6">
-      <h3>Your Deaths</h3>
-      <table class="table table-condensed table-hover">
-        <thead>
-          <tr>
-            <th>Killer</th>
-            <th>Deaths</th>
-          </tr>
-        </thead>
-        {{#each carnageArena.killedByOpponentDetails}}
-        <tbody>
-          <tr class="killer">
-          {{> report}}
-          </tr>
-        </tbody>
-        {{/each}}
-        <tfoot>
-          <tr class="info">
-            <td>Total Deaths</td>
-            <td>{{carnageArena.totalDeaths}}</td>
-          </tr>
-        </tfoot>
-      </table>
-
-      {{> killerReport}}
-    </div>
-  </div>
-{{/if}}
 </template>
 
 <template name="report">

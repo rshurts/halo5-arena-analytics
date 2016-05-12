@@ -15,6 +15,12 @@ Template.victimReport.onCreated(function victimReportOnCreated() {
 });
 
 Template.victimReport.helpers({
+  hidden() {
+    if (Session.get('victim')) {
+      return 'visible';
+    }
+    return 'hidden';
+  },
   victimDetails() {
     return CarnageArena.findOne({
       matchId: Session.get('matchId'),

@@ -15,6 +15,12 @@ Template.killerReport.onCreated(function killerReportOnCreated() {
 });
 
 Template.killerReport.helpers({
+  hidden() {
+    if (Session.get('killer')) {
+      return 'visible';
+    }
+    return 'hidden';
+  },
   killerDetails() {
     return CarnageArena.findOne({
       matchId: Session.get('matchId'),

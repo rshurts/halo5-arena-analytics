@@ -13,6 +13,12 @@ Template.carnageReport.onCreated(function carnageReportOnCreated() {
 });
 
 Template.carnageReport.helpers({
+  hidden() {
+    if (Session.get('matchId')) {
+      return 'visible';
+    }
+    return 'hidden';
+  },
   carnageArena() {
     return CarnageArena.findOne({
       matchId: Session.get('matchId'),
