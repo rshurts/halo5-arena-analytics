@@ -34,8 +34,17 @@
     </div>
     <div class="row">
       <div class="col-md-12">
-        <p>KDA: {{KDA victimDetails.totalKills victimDetails.totalAssists victimDetails.totalDeaths}}</p>
-        <p>Accuracy: {{accuracy victimDetails.totalShotsLanded victimDetails.totalShotsFired}}%</p>
+        <p>KDA: {{
+          KDA
+          victimDetails.totalKills
+          victimDetails.totalAssists
+          victimDetails.totalDeaths
+        }}</p>
+        <p>Accuracy: {{
+          accuracy
+          victimDetails.totalShotsLanded
+          victimDetails.totalShotsFired
+        }}%</p>
         <p>Power Weapon Grabs: {{victimDetails.totalPowerWeaponGrabs}}</p>
       </div>
     </div>
