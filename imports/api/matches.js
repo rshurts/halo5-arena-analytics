@@ -7,7 +7,7 @@ export const Matches = new Mongo.Collection('Matches');
 
 if (Meteor.isServer) {
   Meteor.publish('Matches', function matchesPublication() {
-    return Matches.find({}, { sort: { completionDate: -1, date: -1 } });
+    return Matches.find({}, { sort: { completionDate: -1, date: 1 } });
   });
 }
 

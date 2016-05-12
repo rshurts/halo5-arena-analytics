@@ -25,7 +25,7 @@ Template.matchList.helpers({
     if (player) {
       return Matches.find(
         { player },
-        { sort: { completionDate: -1, date: -1 }, limit: 5 }
+        { sort: { completionDate: -1, date: 1 }, limit: 5 }
       );
     }
     return null;
