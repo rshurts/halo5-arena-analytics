@@ -40,6 +40,8 @@ Meteor.methods({
             mapId: matches[i].MapId,
             gameBaseVariantId: matches[i].GameBaseVariantId,
             gameVariantId: matches[i].GameVariant.ResourceId,
+            // Result key: 0 - DNF, 1 - Lost, 2 - Tied, 3 - Won.
+            result: matches[i].Players[0].Result,
             completionDate: matches[i].MatchCompletedDate.ISO8601Date,
             date: new Date(),
           });

@@ -4,7 +4,6 @@ import { Template } from 'meteor/templating';
 
 import { Matches } from '../api/matches.js';
 import { Maps } from '../api/maps.js';
-import { GameBaseVariants } from '../api/game-base-variants.js';
 import { GameVariants } from '../api/game-variants.js';
 
 import '../api/game-variants.js';
@@ -34,14 +33,23 @@ Template.matchList.helpers({
   maps() {
     return Maps.findOne({ mapId: this.mapId });
   },
-  gameBaseVariants() {
-    return GameBaseVariants.findOne({
-      gameBaseVariantId: this.gameBaseVariantId,
-    });
-  },
   gameVariants() {
     Meteor.call('getGameVariants', this.gameVariantId);
     return GameVariants.findOne({ gameVariantId: this.gameVariantId });
+  },
+  results() {
+    switch (this.result) {
+      case 0:
+        return 'DNF';
+      case 1:
+        return 'Loss';
+      case 2:
+        return 'Tie';
+      case 3:
+        return 'Win';
+      default:
+        return '';
+    }
   },
 });
 
