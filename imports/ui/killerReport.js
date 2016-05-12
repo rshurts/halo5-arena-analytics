@@ -33,6 +33,13 @@ Template.killerReport.helpers({
     }
     return accuracy;
   },
+  KDA(kills, assists, deaths) {
+    let divisorDeaths = deaths;
+    if (deaths === 0) {
+      divisorDeaths = 1;
+    }
+    return ((kills + (assists / 3)) / divisorDeaths).toFixed(1);
+  },
   weaponStats() {
     const weaponStats = [];
     const matchEvents = MatchEvents.find({

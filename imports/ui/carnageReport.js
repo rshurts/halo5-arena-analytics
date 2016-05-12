@@ -31,6 +31,13 @@ Template.carnageReport.helpers({
     }
     return accuracy;
   },
+  KDA(kills, assists, deaths) {
+    let divisorDeaths = deaths;
+    if (deaths === 0) {
+      divisorDeaths = 1;
+    }
+    return ((kills + (assists / 3)) / divisorDeaths).toFixed(1);
+  },
   player() {
     return Session.get('player');
   },

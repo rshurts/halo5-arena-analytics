@@ -14,9 +14,12 @@
           <div class="col-md-3">
             <p>Deaths: {{carnageArena.totalDeaths}}</p>
           </div>
+          <div class="col-md-3">
+            <p>KDA: {{KDA carnageArena.totalKills carnageArena.totalAssists carnageArena.totalDeaths}}</p>
+          </div>
         </div>
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-6">
             <p>Accuracy: {{accuracy carnageArena.totalShotsLanded carnageArena.totalShotsFired}}%</p>
             <p>Power Weapon Grabs: {{carnageArena.totalPowerWeaponGrabs}}</p>
           </div>
