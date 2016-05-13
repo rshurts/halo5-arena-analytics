@@ -3,6 +3,7 @@ import { Template } from 'meteor/templating';
 
 import { CarnageArena } from '../api/carnage-arena.js';
 
+import './helpers.js';
 import './killerReport.js';
 import './victimReport.js';
 import './carnageReport.html';
@@ -23,23 +24,6 @@ Template.carnageReport.helpers({
       matchId: Session.get('matchId'),
       player: Session.get('player'),
     });
-  },
-  accuracy(fired, landed) {
-    let accuracy = 0;
-    if (fired !== undefined && landed !== undefined && landed !== 0) {
-      accuracy = Math.trunc((fired / landed) * 100);
-    }
-    return accuracy;
-  },
-  KDA(kills, assists, deaths) {
-    let divisorDeaths = deaths;
-    if (deaths === 0) {
-      divisorDeaths = 1;
-    }
-    return ((kills + (assists / 3)) / divisorDeaths).toFixed(1);
-  },
-  player() {
-    return Session.get('player');
   },
 });
 

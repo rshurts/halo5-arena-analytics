@@ -2,15 +2,10 @@ import { Meteor } from 'meteor/meteor';
 import { Session } from 'meteor/session';
 import { Template } from 'meteor/templating';
 
+import './helpers.js';
 import './matchList.js';
 import './carnageReport.js';
 import './body.html';
-
-Template.body.helpers({
-  player() {
-    return Session.get('player');
-  },
-});
 
 Template.body.events({
   'submit .gamertag'(event) {

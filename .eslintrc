@@ -9,6 +9,7 @@
   ],
   "rules": {
     "prefer-arrow-callback": ["error", { "allowNamedFunctions": true }],
+    "arrow-body-style": ["error", "always"],
     "prefer-template": 0,
     "import/no-duplicates": 0,
     "no-duplicate-imports": 0,

@@ -5,6 +5,7 @@ import { CarnageArena } from '../api/carnage-arena.js';
 import { MatchEvents } from '../api/match-events.js';
 import { Weapons } from '../api/weapons.js';
 
+import './helpers.js';
 import './victimReport.html';
 
 Template.victimReport.onCreated(function victimReportOnCreated() {
@@ -25,20 +26,6 @@ Template.victimReport.helpers({
       matchId: Session.get('matchId'),
       player: Session.get('victim'),
     });
-  },
-  accuracy(fired, landed) {
-    let accuracy = 0;
-    if (fired !== undefined && landed !== undefined && landed !== 0) {
-      accuracy = Math.trunc((fired / landed) * 100);
-    }
-    return accuracy;
-  },
-  KDA(kills, assists, deaths) {
-    let divisorDeaths = deaths;
-    if (deaths === 0) {
-      divisorDeaths = 1;
-    }
-    return ((kills + (assists / 3)) / divisorDeaths).toFixed(1);
   },
   weaponStats() {
     const weaponStats = [];
