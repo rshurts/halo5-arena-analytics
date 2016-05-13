@@ -10,7 +10,7 @@ Template.registerHelper('accuracy', (fired, landed) => {
 });
 
 Template.registerHelper('KDA', (kills, assists, deaths) => {
-  return ((kills + (assists / 3)) / Math.max(1, deaths)).toFixed(1);
+  return Math.trunc((kills + (assists / 3) - deaths) * 10) / 10;
 });
 
 Template.registerHelper('player', () => {
