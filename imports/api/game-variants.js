@@ -24,6 +24,7 @@ Meteor.methods({
             headers: {
               'Ocp-Apim-Subscription-Key': Meteor.settings.halo5APIKey,
             },
+            npmRequestOptions: { gzip: true },
           }
         );
 
