@@ -7,6 +7,7 @@
       <thead>
         <tr>
           <th>Weapon</th>
+          <th></th>
           <th>Total Kills</th>
           <th>Headshot Kills</th>
         </tr>
@@ -53,6 +54,7 @@
 </template>
 
 <template name="victimWeaponStat">
+  <td><img src={{weaponImageUrl}} alt={{weaponName}} height="40" width="72"></td>
   <td>{{weaponName}}</td>
   <td>{{weaponKills}}</td>
   <td>{{weaponHeadshots}}</td>
