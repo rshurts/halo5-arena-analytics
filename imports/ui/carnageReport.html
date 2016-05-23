@@ -45,13 +45,13 @@
               <th>Kills</th>
             </tr>
           </thead>
-          {{#each carnageArena.killedOpponentDetails}}
           <tbody>
+          {{#each carnageArena.killedOpponentDetails}}
             <tr class="victim">
             {{> report}}
             </tr>
-          </tbody>
           {{/each}}
+          </tbody>
           <tfoot>
             <tr class="info">
               <td>Total Kills</td>
@@ -72,13 +72,13 @@
               <th>Deaths</th>
             </tr>
           </thead>
-          {{#each carnageArena.killedByOpponentDetails}}
           <tbody>
+          {{#each carnageArena.killedByOpponentDetails}}
             <tr class="killer">
             {{> report}}
             </tr>
-          </tbody>
           {{/each}}
+          </tbody>
           <tfoot>
             <tr class="info">
               <td>Total Deaths</td>

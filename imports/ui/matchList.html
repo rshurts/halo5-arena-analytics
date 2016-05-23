@@ -13,8 +13,8 @@
               <th>Result</th>
             </tr>
           </thead>
-        {{#each matches}}
           <tbody>
+          {{#each matches}}
             <tr class="match">
               {{#with maps}}
               <td><img src={{imageUrl}} alt={{name}} height="40" width="80"></td>
@@ -29,8 +29,8 @@
             {{/with}}
               <td>{{results}}</td>
             </tr>
+          {{/each}}
           </tbody>
-        {{/each}}
         </table>
       </div>
     </div>
