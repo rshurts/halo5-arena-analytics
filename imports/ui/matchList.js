@@ -57,6 +57,12 @@ Template.matchList.helpers({
         return '';
     }
   },
+  selectedMatch() {
+    if (this.matchId === Session.get('matchId')) {
+      return 'success';
+    }
+    return null;
+  },
 });
 
 Template.matchList.events({

@@ -25,6 +25,19 @@ Template.carnageReport.helpers({
       player: Session.get('player'),
     });
   },
+  selectedKiller() {
+    if (this.GamerTag === Session.get('killer')) {
+      return 'success';
+    }
+    return null;
+  },
+  selectedVictim() {
+    console.log(this.victim);
+    if (this.GamerTag === Session.get('victim')) {
+      return 'success';
+    }
+    return null;
+  },
 });
 
 Template.carnageReport.events({

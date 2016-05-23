@@ -15,7 +15,7 @@
           </thead>
           <tbody>
           {{#each matches}}
-            <tr class="match">
+          <tr class="match {{selectedMatch}}">
               {{#with maps}}
               <td><img src={{imageUrl}} alt={{name}} height="40" width="80"></td>
               <td>{{name}}</td>

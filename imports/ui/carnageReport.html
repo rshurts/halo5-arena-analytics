@@ -47,7 +47,7 @@
           </thead>
           <tbody>
           {{#each carnageArena.killedOpponentDetails}}
-            <tr class="victim">
+          <tr class="victim {{selectedVictim}}">
             {{> report}}
             </tr>
           {{/each}}
@@ -74,7 +74,7 @@
           </thead>
           <tbody>
           {{#each carnageArena.killedByOpponentDetails}}
-            <tr class="killer">
+          <tr class="killer {{selectedKiller}}">
             {{> report}}
             </tr>
           {{/each}}
