@@ -4,6 +4,7 @@
   "scripts": {
     "start": "meteor run",
     "dev": "meteor run --settings settings.json",
+    "deploy": "DEPLOY_HOSTNAME=galaxy.meteor.com meteor deploy halo5analytics.meteorapp.com --settings settings.json",
     "lint": "eslint ."
   },
   "dependencies": {

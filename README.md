@@ -1,8 +1,10 @@
 # Halo 5 Arena Analytics
 
-A web application for analyising arena performance using the [Halo 5 API](https://developer.haloapi.com/).
+[halo5analytics.meteorapp.com](http://halo5analytics.meteorapp.com/) is a web application for analyising arena performance using the [Halo 5 API](https://developer.haloapi.com/).
 
 ## Development
+
+Install the following dependencies and set up a settings file with your API key.
 
 ### Dependencies
 
