@@ -7,6 +7,8 @@
     "deploy": "DEPLOY_HOSTNAME=galaxy.meteor.com meteor deploy halo5analytics.meteorapp.com --settings settings.json",
     "lint": "eslint ."
   },
+  "author": "Russell Shurts",
+  "license": "MIT",
   "dependencies": {
     "meteor-node-stubs": "~0.2.0"
   },
