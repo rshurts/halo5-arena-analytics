@@ -59,7 +59,7 @@ Template.matchList.helpers({
   },
   selectedMatch() {
     if (this.matchId === Session.get('matchId')) {
-      return 'success';
+      return 'info';
     }
     return null;
   },
