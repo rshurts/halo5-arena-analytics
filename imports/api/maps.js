@@ -6,7 +6,7 @@ export const Maps = new Mongo.Collection('Maps');
 
 if (Meteor.isServer) {
   Meteor.publish('Maps', function mapsPublication() {
-    return Maps.find({});
+    return Maps.find({}, { fields: { name: 1, imageUrl: 1, mapId: 1 } });
   });
 }
 

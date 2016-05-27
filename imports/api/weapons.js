@@ -6,7 +6,7 @@ export const Weapons = new Mongo.Collection('Weapons');
 
 if (Meteor.isServer) {
   Meteor.publish('Weapons', function weaponsPublication() {
-    return Weapons.find({});
+    return Weapons.find({}, { fields: { name: 1, imageUrl: 1, weaponId: 1 } });
   });
 }
 
@@ -30,7 +30,7 @@ Meteor.methods({
           Weapons.insert({
             name: weapons[i].name,
             description: weapons[i].description,
-            imageUrl: weapons[i].largeIconImageUrl,
+            imageUrl: weapons[i].smallIconImageUrl,
             weaponId: weapons[i].id,
           });
         }

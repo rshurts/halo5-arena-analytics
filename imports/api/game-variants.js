@@ -7,7 +7,11 @@ export const GameVariants = new Mongo.Collection('GameVariants');
 
 if (Meteor.isServer) {
   Meteor.publish('GameVariants', function gameVariantsPublication() {
-    return GameVariants.find({});
+    return GameVariants.find({}, { fields: {
+      name: 1,
+      iconUrl: 1,
+      gameVariantId: 1,
+    } });
   });
 }
 

@@ -7,7 +7,14 @@ export const MatchEvents = new Mongo.Collection('MatchEvents');
 
 if (Meteor.isServer) {
   Meteor.publish('MatchEvents', function matchPublication() {
-    return MatchEvents.find();
+    return MatchEvents.find({}, { fields: {
+      matchId: 1,
+      isHeadshot: 1,
+      killer: 1,
+      killerWeaponStockId: 1,
+      victim: 1,
+      eventName: 1,
+    } });
   });
 }
 

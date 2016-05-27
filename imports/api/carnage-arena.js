@@ -7,7 +7,18 @@ export const CarnageArena = new Mongo.Collection('CarnageArena');
 
 if (Meteor.isServer) {
   Meteor.publish('CarnageArena', function carnageArenaPublication() {
-    return CarnageArena.find({});
+    return CarnageArena.find({}, { fields: {
+      matchId: 1,
+      player: 1,
+      totalKills: 1,
+      totalAssists: 1,
+      totalDeaths: 1,
+      totalShotsLanded: 1,
+      totalShotsFired: 1,
+      totalPowerWeaponGrabs: 1,
+      killedOpponentDetails: 1,
+      killedByOpponentDetails: 1,
+    } });
   });
 }
 
