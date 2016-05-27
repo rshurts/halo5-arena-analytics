@@ -1,4 +1,5 @@
 node_modules/
+production-settings.json
 settings.json
 *.log
 .idea
